@@ -1,80 +1,897 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>estab-net-fomulario</title>
-  <link rel="stylesheet" href="estilos/style.css" media="all">
-  <link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation:portrait)">
-  <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation:landscape)">
+  <title>Stab-net</title>
+<link rel="stylesheet" href="style6.css">
+  <link rel="stylesheet" media="screen and (orientation: portrait)" href="retrato2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+@media screen and (max-width: 667px) {
+      header {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .caixa {
+        font-size: 4em;
+        left: 10px;
+        top: 10px;
+      }
+
+      .menu-icon {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .menu-principal {
+        position: static;
+        color: white;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+      }
+
+      .menu {
+        position: static;
+        display: none;
+      }
+
+      .menu li {
+        padding: 5px;
+      }
+
+      /* Aplicar filtro blur somente para a imagem no cabeçalho */
+      #header img {
+        filter: blur(-2px);
+      }
+    }
+    
+      .menu {
+        position: static;
+        display: none;
+      }
+
+      .menu li {
+        padding: 5px;
+      }
+
+
+    .modal {  
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffffd8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    ::-webkit-scrollbar {
+      background-color: #343541;
+      width: 8px;
+    }
+    ::-webkit-scrollbar-corner {
+      background-color: aliceblue;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.657) ;
+      border-radius: 10px;
+     padding: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background-color: rgba(255, 255, 255, 0.826);
+    }
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .modal-content img {
+      display: block;
+      max-width: 190%;
+      max-height: 100%;
+      border-radius: 5px;
+      margin: 0 auto;
+      border: 2px solid white;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-button {
+        position: absolute;
+      top: 5px;
+      right: 10px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .meu-elemento {
+      cursor: pointer;
+      color: white;
+    }
+    .cor-fundo {
+      background-color: #202028;
+      color: white;
+    }
+    body{
+   background-color: #ffffff;   
+   color: white;
+    }
+
+
+    .menu-principal {
+  position: fixed;
+  color: white;
+
+  top: 10px;
+  left: 10px;
+  position: relative;
+  transition-duration: .7s;
+}
+
+
+.menu-icon:hover{
+ color: black;
+
+}
+
+.line {
+  width: 80%;
+  height: 2px;
+  background-color: rgb(209, 209, 209);
+  margin-bottom: 4px;
+  position: relative;
+}
+.line:hover{
+  background-color: rgb(0, 0, 0);
+}
+
+.menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: none;
+  color: rgb(200, 184, 184);
+height: 900px;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.167);
+transition-duration: .7s;
+position: relative;
+}
+
+.menu li {
+  position: relative;
+  list-style: none;
+  padding: 10px;
+  color: white;
+  width: 100px;
+  transition-duration: .7s;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.924);
+ 
+
+}
+.menu li a:hover{
+ 
+ 
+  text-decoration: overline 2px black;
+  transition-duration: .9s;
+
+}
+
+.menu-icon{
+  height: 10px;
+  width: 26px;
+position: fixed;
+  cursor: pointer;
+  color: white;
+  z-index: 999px;
+}
+
+
+.menu{
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.971);
+  width: 200px;
+  left: -9px;
+  transition-duration: .9s;
+}
+*{
+margin: 0px;
+}
+
+header{
+  position: fixed;
+  background-color: #202123;
+  border: 1px solid white;
+  width: 1400px;
+ text-align: center;
+ color: #D9D9E3;
+}
+hr{
+
+}
+.planta{
+  position: absolute;
+  top: 90px;
+  left: 200px;
+  background-color: green;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  color: black;
+position: relative;
+left: -80px;
+
+top: 15px;
+}
+
+
+
+.li-1{
+    position: relative;
+    font-size: .7em;
+    text-align: right;
+    left: 40px;
+    top: -70px;
+}
+.li-2{
+    top: -20px;
+}
+.link-conf{
+    position: relative;
+    top: -10px;
+    left: -22px;
+}
+
+
+body{
+  background-color: #ffffff;
+}
+
+
+
+
+
+
+    #header .carousel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    #header .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(0px);
+    }
+    #header {
+      position: relative;
+      width: 1364px;
+      height: 655px; /* Ajuste a altura do header conforme necessário */
+      overflow: hidden;
+      overflow-x: hidden; /* Adição da propriedade para ocultar a rolagem lateral */
+    }
+
+  
+
+    #header .owl-carousel .owl-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(imagem.jpg);
+      background-size: cover;
+      filter: blur(0px); /* Ajuste o valor do blur conforme necessário */
+      z-index: -1;
+    }
+    #header img {
+      
+      top: 0;
+      left: 0;
+      
+      object-fit: cover;
+      ; /* Ajuste o valor do blur conforme necessário */
+      z-index: -1;
+    }
+    .caixa{
+      position: absolute;
+      color: black;
+      z-index: 99;
+color: rgba(255, 255, 255, 0.852);
+      font-size: 6cqmax;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      top: 250px;
+      left: 450px;
+     
+    }
+    .link-1 {
+  position: absolute;
+  font-size: 1.6em;
+  left: 1230px;
+  top: 10px;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  z-index: 999;
+  color: #E91E63; /* Cor do link */
+}
+
+.link-1:hover{
+  transform: scale(1.2);
+  transition-duration: .9s;
+  
+}
+.link-1:hover {
+  transform: scale(1.2);
+  transition-duration: 0.9s;
+}
+
+.link-1:hover span {
+  transform:  scale(.9);
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+
+
+
+.link-1 span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  
+}
+
+.link-1::before,
+.link-1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-1::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.3s;
+}
+
+.link-1::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.6s;
+}
+
+
+
+.link-1:hover::before,
+.link-1:hover::after {
+  transform: scaleX(1);
+}
+
+.particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(233, 30, 99, 0.7); /* Cor das partículas */
+  opacity: 0;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.particles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #FF4081; /* Cor das partículas */
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: particles-animation 2s infinite;
+}
+
+.link-1:hover .particles::before {
+  transform: scale(3);
+  opacity: 1;
+}
+
+.link-1:hover .particles::after {
+  opacity: 1;
+}
+
+@keyframes particles-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
+
+.link-1::before,
+.link-1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-1::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.2s;
+}
+
+.link-1::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.4s;
+}
+
+.link-1:hover::before,
+.link-1:hover::after {
+  transform: scaleX(1);
+}
+
+.link-1::before,
+.link-1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-1::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.2s;
+}
+
+.link-1::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.4s;
+}
+
+.link-1:hover::before,
+.link-1:hover::after {
+  transform: scaleX(1);
+}
+
+.link-1 span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 0.8s;
+}
+
+.link-1:hover span {
+ 
+}
+
+.particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(233, 30, 99, 0.7); /* Cor das partículas */
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.particles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #FF4081; /* Cor das partículas */
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: particles-animation 2s infinite;
+  transition-delay: 1s;
+}
+
+.link-1:hover .particles::before {
+  transform: scale(3);
+  opacity: 1;
+}
+
+.link-1:hover .particles::after {
+  opacity: 1;
+}
+
+.link-2 {
+  position: absolute;
+  font-size: 1.6em;
+  left: 1100px;
+  top: 10px;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  z-index: 999;
+  color: #E91E63; /* Cor do link */
+}
+
+.link-2:hover{
+  transform: scale(1.2);
+  transition-duration: .9s;
+  
+}
+.link-2:hover {
+  transform: scale(1.2);
+  transition-duration: 0.9s;
+}
+
+.link-2:hover span {
+  transform:  scale(.9);
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+
+
+
+.link-2 span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  
+}
+
+.link-2::before,
+.link-2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-2::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.3s;
+}
+
+.link-2::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.6s;
+}
+
+
+.link-2:hover::before,
+.link-2:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+.link-2::before,
+.link-2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-2::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.2s;
+}
+
+.link-2::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.4s;
+}
+
+.link-2:hover::before,
+.link-2:hover::after {
+  transform: scaleX(1);
+}
+
+.link-2::before,
+.link-2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #E91E63; /* Cor da linha de destaque */
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link-2::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition-delay: 0.2s;
+}
+
+.link-2::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  transition-delay: 0.4s;
+}
+
+.link-2:hover::before,
+.link-2:hover::after {
+  transform: scaleX(1);
+}
+
+.link-2 span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 0.8s;
+}
+
+.link-2:hover span {
+ 
+}
+
+
+.link-2:hover .particles::before {
+  transform: scale(3);
+  opacity: 1;
+}
+
+.link-2:hover .particles::after {
+  opacity: 1;
+}
+.item {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.item img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: animateBackground 20s linear infinite;
+}
+
+@keyframes animateBackground {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+p#paisagens {
+  position: relative;
+      z-index: 999;
+      color: #ffffff; /* CCor do texto */
+      width: 430px;
+      top: 370px;
+      left: 447px;
+      font-family: 'Cormorant Infant', serif;
+      font-size: 1.3em;
+    }
+    p#tecnologia{
+      position: relative;
+      z-index: 999;
+      color: #ffffff; /* CCor do texto */
+      width: 400px;
+      top: 370px;
+      left: 464px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1em;
+    }
+    p#astrologia{
+      position: relative;
+      z-index: 999;
+      color: #ffffff; /* CCor do texto */
+      width: 440px;
+      top: 370px;
+      font-size: 1.5em;
+      left: 445px;
+      font-family: 'Playball', cursive;
+
+
+    }
+    p#fim{
+      position: relative;
+      z-index: 999;
+      color: #ffffff; /* CCor do texto */
+      width: 450px;
+      top: 370px;
+      font-size: 1.5em;
+      left: 439px;
+      font-family: 'Carattere', cursive;
+    }
+ </style>
 </head>
 <body>
-  <header>
-    <h1><strong style="color: orangered;"><strong style="color: orangered;">estab</strong></strong><strong style="color: white;">-net</strong></h1>
-    <div>
-      <p>viagem entre as maravilhas da tecnologias,</p>
-      <p>curso de html e css aqui</p>
+  <h1 class="caixa"><strong style="color: palevioletred;">Stab</strong><strong style="color: blueviolet;">-net</strong></h1>
+  <header id="header">
+    <a href="pag001.html" class="link-1">
+      <span>criar conta</span>
+      <div class="particles"></div>
+    </a>
+
+    <a href="sobre.html" class="link-2">
+      <span>Sobre nós</span>
+      <div></div>
+    </a>
+
+
+    <div class="owl-carousel owl-theme">
+      <div class="item"><p  id="paisagens">Prepare-se para uma jornada inesquecível pelas paisagens mais espetaculares do planeta. De exuberantes florestas tropicais a deslumbrantes desertos dourados, explore conosco as maravilhas que a natureza nos presenteou.</p><img src="mountains-ge4051b03b_1280.png" alt="Imagem 1"></div>
+      <div class="item"><p id="tecnologia">Descubra o futuro da tecnologia robótica e digital em nosso site, onde inovação e criatividade se unem.</p><img src="robot-g1934d85a9_1280.jpg" alt="Imagem 2"></div>
+      <div class="item"><p id="astrologia">Desvende os segredos do cosmos, mergulhe nas energias dos astros e descubra o poder transformador da astrologia em nosso site.</p><img src="astrology-gf7e4e16ae_1920.jpg" alt="Imagem 3"></div>
+      <div class="item"><p id="fim">Explore um mundo de maravilhas na Stab-net! Descubra a tecnologia de ponta, desvende os mistérios da astrologia e mergulhe em paisagens fantásticas. Aqui, a diversão e o conhecimento caminham lado a lado!</p><img src="woman-g2831f4913_1920.jpg"Imagem 3"></div>
+      
+      <!-- Adicione quantas imagens desejar dentro do carrossel -->
     </div>
-    <a class="top" href="pag001.html">⚙️configuração</a>
-    <img class="imgpe" src="imagens/perfil-img.jpg" alt="">
-    <a class="cima" href="pag002.html">perfil</a>
+    
   </header>
-  <article>
-    <h2 class="bottom">faça o login</h2>
-    <br>
-    <form id="loginForm" method="get" autocomplete="off">
-      <p>
-        <label for="ida"></label>
-        <input type="range" name="da" id="ida" max="40" oninput="inum.innerHTML = Number(ida.value) + Number(ida.value)">
-        <output id="inum">5</output>
-      </p>
-      <br>
-      <p>
-        <label for="iname">nome do usuário:</label>
-        <input type="text" name="nome" id="iname" placeholder="insira o nome" required>
-      </p>
-      <br>
-      <p>
-        <label for="igmail">email:</label>
-        <input type="email" name="gmail" id="igmail" placeholder="insira o E-mail" required>
-      </p>
-      <br>
-      <p>
-        <label for="ipass">senha:</label>
-        <input type="password" name="pass" id="ipass" placeholder="insira a Senha" required>
-      </p>
-      <br>
-      <p>
-        <label for="idate">data de nascimento:</label>
-        <input type="datetime-local" name="date" placeholder="insira a data de nascimento" required id="idate">
-      </p>
-      <br>
-      <p>
-        <label for="ilang">salvar as configurações</label>
-        <input type="checkbox" name="email" required id="ilang">
-      </p>
-      <br>
-      <input type="submit" value="Enviar">
-    </form>
-  </article>
   <script>
-    var form = document.getElementById("loginForm");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault(); // Impede o envio padrão do formulário
-      
-      var nome = document.getElementById("iname").value;
-      var email = document.getElementById("igmail").value;
-      // Outros campos do formulário
-      
-      // Exibe as informações do formulário
-      console.log("Nome do usuário: " + nome);
-      console.log("Email: " + email);
-      // Exibir outras informações do formulário conforme necessário
-      
-      // Redireciona para "pag003.html"
-      window.location.href = "pag003.html";
+    $(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 11000, // Altere o valor em milissegundos para ajustar a velocidade do carrossel
+        autoplayHoverPause: false,
+        items: 1,
+        animateOut: 'fadeOut'
+      });
     });
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var cursorImg = new Image();
+        cursorImg.src = "caminho/para/o/arquivo-da-imagem.png"; // substitua pelo caminho correto para a imagem
+
+        var customCursor = document.createElement("div");
+        customCursor.id = "custom-cursor";
+        customCursor.style.backgroundImage = "url('" + cursorImg.src + "')";
+
+        document.body.appendChild(customCursor);
+
+        document.addEventListener("mousemove", function(e) {
+            customCursor.style.left = (e.clientX - (customCursor.offsetWidth / 2)) + "px";
+            customCursor.style.top = (e.clientY - (customCursor.offsetHeight / 2)) + "px";
+        });
+
+        document.addEventListener("mouseleave", function() {
+            customCursor.style.display = "none";
+        });
+
+        document.addEventListener("mouseenter", function() {
+            customCursor.style.display = "block";
+        });
+    });
+
+    
+    // Substituir a URL atual por uma nova URL
+history.pushState(null, null, location.href);
+
+// Adicionar um ouvinte de eventos para capturar o clique no link
+document.getElementById('seu-link').addEventListener('click', function(event) {
+  // Impedir o comportamento padrão do link
+  event.preventDefault();
+
+  // Realizar as ações desejadas ao clicar no link
+
+  // Substituir a URL atual por uma nova URL
+  history.pushState(null, null, this.href);
+});
+
   </script>
 </body>
 </html>
