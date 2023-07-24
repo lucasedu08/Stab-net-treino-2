@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>estab-net-fomulario</title>
+  <link rel="stylesheet" href="estilos/style.css" media="all">
+  <link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation:portrait)">
+  <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation:landscape)">
+</head>
+<body>
+  <header>
+    <h1><strong style="color: orangered;"><strong style="color: orangered;">estab</strong></strong><strong style="color: white;">-net</strong></h1>
+    <div>
+      <p>viagem entre as maravilhas da tecnologias,</p>
+      <p>curso de html e css aqui</p>
+    </div>
+    <a class="top" href="pag001.html">⚙️configuração</a>
+    <img class="imgpe" src="imagens/perfil-img.jpg" alt="">
+    <a class="cima" href="pag002.html">perfil</a>
+  </header>
+  <article>
+    <h2 class="bottom">faça o login</h2>
+    <br>
+    <form id="loginForm" method="get" autocomplete="off">
+      <p>
+        <label for="ida"></label>
+        <input type="range" name="da" id="ida" max="40" oninput="inum.innerHTML = Number(ida.value) + Number(ida.value)">
+        <output id="inum">5</output>
+      </p>
+      <br>
+      <p>
+        <label for="iname">nome do usuário:</label>
+        <input type="text" name="nome" id="iname" placeholder="insira o nome" required>
+      </p>
+      <br>
+      <p>
+        <label for="igmail">email:</label>
+        <input type="email" name="gmail" id="igmail" placeholder="insira o E-mail" required>
+      </p>
+      <br>
+      <p>
+        <label for="ipass">senha:</label>
+        <input type="password" name="pass" id="ipass" placeholder="insira a Senha" required>
+      </p>
+      <br>
+      <p>
+        <label for="idate">data de nascimento:</label>
+        <input type="datetime-local" name="date" placeholder="insira a data de nascimento" required id="idate">
+      </p>
+      <br>
+      <p>
+        <label for="ilang">salvar as configurações</label>
+        <input type="checkbox" name="email" required id="ilang">
+      </p>
+      <br>
+      <input type="submit" value="Enviar">
+    </form>
+  </article>
+  <script>
+    var form = document.getElementById("loginForm");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      
+      var nome = document.getElementById("iname").value;
+      var email = document.getElementById("igmail").value;
+      // Outros campos do formulário
+      
+      // Exibe as informações do formulário
+      console.log("Nome do usuário: " + nome);
+      console.log("Email: " + email);
+      // Exibir outras informações do formulário conforme necessário
+      
+      // Redireciona para "pag003.html"
+      window.location.href = "pag003.html";
+    });
+  </script>
+</body>
+</html>

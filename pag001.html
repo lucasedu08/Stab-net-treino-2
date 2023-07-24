@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <i class="circle" style="--color: #1dd1a1;"></i>
+    <i class="circle" style="--color: #ff6b6b;"></i>
+    <i class="circle" style="--color: #feca57;"></i>
+    <form class="login" id="loginForm" action="pag003.html">
+      <h2>Login</h2>
+      <label for="iemail" class="inputbox">
+        <input type="email" name="email" id="iemail" placeholder="E-mail" required >
+      </label>
+
+      <label for="isenha" class="inputbox">
+        <input type="password" name="senha" id="isenha" placeholder="Senha" required >
+      </label>
+
+      <label class="inputbox">
+        <input type="submit" value="Criar Conta" name="button" id="ibutton"  onclick="clicar()">
+      </label>
+
+      <label class="links">
+        <a href="#">Esqueceu a Senha</a>
+        <a href="#">Criar Conta</a>
+      </label>
+    </form>
+  </div>
+
+  
+
+  <script src="script.js">
+ history.replaceState(null, null, location.href);
+
+ function clicar() {
+  var e = document.getElementById('iemail')
+  var s = document.getElementById('isenha')
+
+  if(s.value === '') {
+  
+
+  }
+
+}
+  </script>
+</body>
+</html>

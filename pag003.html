@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stab-net</title>
+  <link rel="stylesheet" href="styles4.css">
+  <link rel="stylesheet" media="screen and (orientation: portrait)" href="retrato.css">
+
+  <script src="https://unpkg.com/zoomooz/zoomooz.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="close-icon" onclick="toggleMenu()">X</div>
+      
+      <!-- Adicione o menu que será mostrado/oculto -->
+      
+      <h1 id="title">Stab-net</h1>
+      <p class="p-header">Conectando ideias, construindo o futuro.</p>
+    </div>
+  </header>
+
+
+  <main id="informacoes-container">
+    <nav class="menu">
+      <ul>
+        <li style="text-align: left;"><a href="#">Novidades</a></li>
+        <li style="text-align: left;"><a href="#">Geografia</a></li>
+        <li style="text-align: left;"><a href="#">Tecnologias</a></li>
+        <li style="text-align: left;"><a href="#">Astrologia</a></li>
+        <li style="text-align: left;"><a href="#">Natureza</a></li>
+        <li style="text-align: left;"><a href="#">fisica</a></li>
+        <li style="text-align: left;"><a href="#">politica</a></li>
+        <li style="text-align: left;" ><a href="#">Arqueologia</a></li>
+        <li style="text-align: left;"><a href="#">Curiosidades</a></li>
+        <li style="text-align: left;"><a href="#">Arte e Cultura</a></li>
+
+      </ul>
+    </nav>
+    <br><br>
+  </main>
+
+  <footer>
+    <p class="fot">&copy; 2023 Meu Site de Informações. Todos os direitos reservados.</p>
+  </footer>
+  <br>
+  <script>
+     document.addEventListener('DOMContentLoaded', function () {
+      var container = document.getElementById('informacoes-container');
+      var infos = [
+        {
+          imagem: 'blog_1477.jpeg',
+          titulo: 'Stab-net Tecnologia - Internet, celular, redes sociais e muita inovação',
+          texto: 'Confira notícias sobre inovações tecnológicas e internet, além de dicas sobre segurança e como usar melhor seu celular. ',
+          urlImagem: 'URL_DA_IMAGEM_1',
+          urlTitulo: 'URL_DO_TITULO_1'
+        },
+        {
+          imagem: 'pexels-ray-bilcliff-1672813.jpg',
+          titulo: 'Stab-net Natureza - Conheça 5 lindas paisagens naturais do Brasil e do mundo',
+          texto: 'As Cataratas do Iguaçu estão entre as paisagens mais lindas do Brasil. Lençóis Maranhenses (Brasil) não existe nada parecido em todo o mundo. As lagoas de água doce.',
+          urlImagem: 'URL_DA_IMAGEM_2',
+          urlTitulo: 'URL_DO_TITULO_2'
+        },
+        {
+          imagem: 'pexels-cottonbro-studio-6979594.jpg',
+          titulo: 'Stab-net astrologia - Astrologia: origem, história e curiosidades',
+          texto: 'Os registros mais antigos sugerem que a astrologia surgiu no terceiro milênio a.C. Ela teve um importante papel na formação das culturas, e sua influência é encontrada na astronomia antiga...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'pexels-hugo-heimendinger-2993132.jpg',
+          titulo: 'Stab-net Natureza - Conheça as 14 paisagens mais extraordinárias do mundo',
+          texto: ' Que tal conhecer algumas das paisagens mais lindas do mundo? Confira uma seleção com 14 lugares e prepare as malas. 1. Caverna Melissani, Kefalonia, Grécia Bateu aquela...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'pexels-tara-winstead-8386434.jpg',
+          titulo: 'Stab-net Tecnologia - A Era da robótica: entenda o avanço do uso dessa tecnologia',
+          texto: 'A Era da robótica: entenda o avanço do uso dessa tecnologia no nosso dia a dia A história é transpassada por inovações que buscam diminuir o esforço físico realizado pelos humanos. Desde a...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'pexels-quang-nguyen-vinh-2132013.jpg',
+          titulo: 'Stab-net Esportes - OS Top 10: ESPORTES MAIS RADICAIS DO MUNDO',
+          texto: 'OS Top 10: ESPORTES MAIS RADICAIS DO MUNDO. É sempre muito bom sentir aquela dose de adrenalina, não é mesmo? Então confiram agora, os 10 esportes mais radicais do...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'farofa-formiga-site.webp',
+          titulo: 'Stab-net Culinária - Conheça agora As 15 comidas mais estranhas do mundo',
+          texto: '15 comidas mais estranhas do mundo Olhos de atum – Japão. O desperdício é um dos hábitos que os japoneses dificilmente adotam, principalmente quando se... Shirako – Japã...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'page_1.jpg',
+          titulo: 'Stab-net Tecnologia - Uso de tecnologia em excesso pode ser prejudicial à saúde',
+          texto: 'Uso de tecnologia em excesso pode ser prejudicial à saúde. Celulares, computadores e demais aparelhos, viraram companheiros e aliados na atualidade. Especialistas...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'pexels-pixabay-415571.jpg',
+          titulo: 'Stab-net cultura - As 10 Maiores Religiões do Mundo - Mundo da Geografia',
+          texto: 'Com mais de 2 bilhões de seguidores, o Cristianismo é a maior religião do mundo. 10. Cao Dai (4,4 Milhões De Seguidores) Cao Dai era um sistema de crenças que se originou no...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'pexels-daniel-cid-17505900.jpg',
+          titulo: 'Stab-net Astrologia - Galáxia: o que é, tipos, formação, evolução',
+          texto: 'Existem três tipos de galáxias: elípticas, espirais e irregulares. A nossa Galáxia é a Via Láctea, que tem formato de espiral e está situada no conglomerado denominado Grupo Local, onde também...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        {
+          imagem: 'malta-741x486_c.jpg',
+          titulo: 'Stab-net Curiosidades - 12 factos estranhos dos países mais misteriosos do mundo',
+          texto: '12 factos estranhos dos países mais misteriosos do mundo 12. Brunei (Estado de Brunei Darussalam) Ninguém paga impostos neste país. Esta nação asiática é governada por um...',
+          urlImagem: 'URL_DA_IMAGEM_3',
+          urlTitulo: 'URL_DO_TITULO_3'
+        },
+        // Adicione mais objetos para cada seção de informação com imagens, títulos, textos e URLs diferentes
+      ];
+
+      for (var i = 0; i < infos.length; i++) {
+        var section = document.createElement('section');
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        var h2 = document.createElement('h2');
+        var p = document.createElement('p');
+
+        img.src = infos[i].imagem;
+        img.alt = 'Imagem ' + (i + 1);
+        h2.textContent = infos[i].titulo;
+        p.textContent = infos[i].texto;
+
+        var imgLink = document.createElement('a');
+        imgLink.href = infos[i].urlImagem;
+        imgLink.appendChild(img);
+
+        var titleLink = document.createElement('a');
+        titleLink.href = infos[i].urlTitulo;
+        titleLink.appendChild(h2);
+
+        div.appendChild(imgLink);
+        div.appendChild(titleLink);
+        div.appendChild(p);
+        div.classList.add('link-container'); // Adicione a classe 'link-container' à div
+
+        section.appendChild(div);
+        container.appendChild(section);
+      }
+    });
+
+
+
+
+// Função para alternar a classe "show" no menu e no ícone do hamburguer/fechar "X" ao clicar no ícone
+
+function toggleMenu() {
+  const menuIcon = document.querySelector(".menu-icon");
+  const closeIcon = document.querySelector(".close-icon");
+  const menu = document.querySelector(".menu");
+
+  // Mostra ou esconde o menu e alterna entre o ícone do hamburguer e "X"
+  if (menu.style.display === "none") {
+    menu.style.display = "block";
+    menuIcon.style.display = "none";
+    closeIcon.style.display = "block";
+  } else {
+    menu.style.display = "none";
+    menuIcon.style.display = "block";
+    closeIcon.style.display = "none";
+  }
+}
+
+
+
+function removeHorizontalScroll() {
+      if (window.innerWidth <= document.body.scrollWidth) {
+        document.body.style.overflowX = "hidden";
+      } else {
+        document.body.style.overflowX = "auto";
+      }
+    }
+
+    // Chamada da função para remover a rolagem horizontal quando a página é carregada
+    window.onload = removeHorizontalScroll;
+
+    // Chamada da função para ajustar a rolagem quando o tamanho da tela é alterado
+    window.onresize = removeHorizontalScroll;
+
+  </script>
+</body>
+
+</html>

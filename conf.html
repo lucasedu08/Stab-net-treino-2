@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configurações</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="cropper.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Configurações</h1>
+    <div class="tabs">
+      <div class="tab active" id="tab-profile" onclick="openTab('profile')">Perfil</div>
+      <div class="tab" id="tab-notifications" onclick="openTab('notifications')">Notificações</div>
+      <div class="tab" id="tab-privacy" onclick="openTab('privacy')">Privacidade</div>
+      <div class="tab" id="tab-account" onclick="openTab('account')">Conta</div>
+      <div class="tab" id="tab-advanced" onclick="openTab('advanced')">Avançado</div>
+    </div>
+    <div id="profile" class="tab-content active">
+      <h2>Perfil</h2>
+      <form>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" placeholder="Digite seu nome">
+
+        <label for="bio">Biografia:</label>
+        <textarea id="bio" placeholder="Digite sua biografia"></textarea>
+
+        <label for="profile-pic">Foto de Perfil:</label>
+        <input type="file" id="profile-pic" accept="image/*">
+
+        <!-- Outras opções de perfil aqui -->
+      </form>
+    </div>
+    <div id="notifications" class="tab-content">
+      <h2>Notificações</h2>
+      <form>
+        <label for="email-notifications">Notificações por E-mail:</label>
+        <input type="checkbox" id="email-notifications">
+
+        <label for="push-notifications">Notificações Push:</label>
+        <input type="checkbox" id="push-notifications">
+
+        <!-- Outras opções de notificações aqui -->
+      </form>
+    </div>
+    <div id="privacy" class="tab-content">
+      <h2>Privacidade</h2>
+      <form>
+        <label for="private-account">Conta Privada:</label>
+        <input type="checkbox" id="private-account">
+
+        <label for="data-sharing">Compartilhamento de Dados:</label>
+        <input type="checkbox" id="data-sharing">
+
+        <!-- Outras opções de privacidade aqui -->
+      </form>
+    </div>
+    <div id="account" class="tab-content">
+      <h2>Conta</h2>
+      <form>
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" placeholder="Digite seu nome de usuário">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" placeholder="Digite sua senha">
+
+        <!-- Outras opções de conta aqui -->
+      </form>
+    </div>
+    <div id="advanced" class="tab-content">
+      <h2>Avançado</h2>
+      <form>
+        <label for="custom-settings">Configurações Personalizadas:</label>
+        <textarea id="custom-settings" placeholder="Digite suas configurações personalizadas"></textarea>
+        <button id="save-button">Salvar</button>
+        <!-- Outras opções avançadas aqui -->
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

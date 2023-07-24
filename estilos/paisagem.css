@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+a.top{
+    margin-right: 40px;
+}
+a.cima{
+    margin-right: -6px;
+}
+img.imgpe{
+    margin-right: 10px;
+}
+@media screen and (min-width: 1100px) {
+
+   img.imgpe{
+    margin-right: -5px;
+} 
+
+    
+}
+@media  screen and (min-width: 1270px) m {
+    img.imgpe{
+        margin-right: -5px;
+    }
+}

@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+html{
+height: 100vh;
+}
+
+header{
+    width: 96vw;
+}
+a.top{
+ margin-right: 340px;
+
+}
+img.imgpe{
+    margin-right: 445px;
+    margin-top: 30px;
+}
+a.cima{
+    margin-right: 440px;
+    margin-top: 30px;
+   right: -5px;
+}
+
+article{
+    width:90vw;
+    height: 50vh;
+}
